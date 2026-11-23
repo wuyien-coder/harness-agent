@@ -21,6 +21,9 @@ node_modules/
 frontend/dist/
 frontend/.npm-cache/
 *.tsbuildinfo
+docs/assets/frames/
+docs/assets/frames-manifest.json
+docs/assets/_video_frames/
 reports/*.json
 !reports/validation.json
 !reports/eval_current.json

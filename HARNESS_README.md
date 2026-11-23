@@ -3,6 +3,25 @@
 本目录是 `简历项目_学位论文知识问答_主流架构版` 的**完整副本**，在其之上新增了一层 agent harness。
 原项目本体（`D:/找工作文件夹/简历项目_学位论文知识问答_主流架构版/`）**零改动**。
 
+## 快速预览
+
+交互演示视频（16 秒，展示「提问 → 规划 → 流式生成 → 引用卡片 → 调度轨迹 → 引用切换」完整链路）：
+
+[![Agent Harness 交互演示](docs/assets/screenshots/03-answer.png)](docs/assets/demo.mp4)
+
+> 若上面图片不能点击播放，直接打开 [docs/assets/demo.mp4](docs/assets/demo.mp4)。
+
+关键界面截图：
+
+| 场景 | 截图 |
+|---|---|
+| 欢迎页与三项能力入口 | ![欢迎页](docs/assets/screenshots/01-welcome.png) |
+| 回答 + 成本 + 置信度 | ![回答](docs/assets/screenshots/03-answer.png) |
+| 调度轨迹展开 | ![调度轨迹](docs/assets/screenshots/04-trace.png) |
+| 引用卡片与证据联动 | ![引用](docs/assets/screenshots/05-citations.png) |
+
+素材可用 `python scripts/record_demo.py` + `python scripts/build_demo_video.py` 重跑生成（预设数据注入，零费用、可复现）。
+
 ## 0. 框架定位与编排范式（面试速记）
 
 **它不是套用现成的 Agent 框架**——LangGraph / AutoGen / CrewAI 均未使用；`langgraph` 只出现在原项目 `pyproject.toml` 的 `prod` 可选依赖里，harness 代码里一次都没用到。它是**用 Python 标准库自研的轻量 Agent Harness 编排层**：`contracts.py` 用 `dataclass` / `Enum` 定义契约、刻意不 import 原项目任何类型；LLM 调用走自己写的 `OpenAICompatClient`（OpenAI 兼容 SSE，不绑定厂商 SDK）。
