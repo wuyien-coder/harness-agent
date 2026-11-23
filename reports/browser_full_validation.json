@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "full corpus status on desktop",
+    "persisted real LLM answer, Markdown and citation panel",
+    "326 full documents and management controls",
+    "actual runtime architecture rendered",
+    "mobile architecture fits viewport",
+    "mobile chat fits viewport"
+  ],
+  "console_errors": [],
+  "status": "passed"
+}

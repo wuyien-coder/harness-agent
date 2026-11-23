@@ -1,0 +1,41 @@
+# Use with: docker compose --env-file .env -f docker-compose.yml -f docker-compose.full.yml up --build -d
+x-full-environment: &full-env
+  MATHKB_DATA_DIR: /app/data/full
+  MATHKB_BIOGRAPHIES_DIR: /app/data/full/biographies
+  MATHKB_EMBEDDING__PROVIDER: bge
+  MATHKB_EMBEDDING__CACHE_DIR: /app/models
+  MATHKB_EMBEDDING__VECTOR_CACHE_DIR: /app/.index/embedding-cache
+  MATHKB_LLM__PROVIDER: openai
+  MATHKB_LLM_CONFIG_FILE: /run/secrets/llm.env
+  MATHKB_LLM__MODEL: ${MATHKB_LLM__MODEL:-deepseek-chat}
+  MATHKB_LLM__BASE_URL: ${MATHKB_LLM__BASE_URL:-https://api.deepseek.com/v1}
+
+x-full-build: &full-build
+  context: .
+  dockerfile: deploy/Dockerfile
+  args:
+    INSTALL_ML: "true"
+
+x-full-volumes: &full-volumes
+  - index-data:/app/.index
+  - type: bind
+    source: ${MODEL_CACHE_DIR}
+    target: /app/models
+    read_only: true
+  - type: bind
+    source: ./data/full
+    target: /app/data/full
+  - type: bind
+    source: ./.runtime/private.env
+    target: /run/secrets/llm.env
+    read_only: true
+
+services:
+  api:
+    build: *full-build
+    environment: *full-env
+    volumes: *full-volumes
+  worker:
+    build: *full-build
+    environment: *full-env
+    volumes: *full-volumes

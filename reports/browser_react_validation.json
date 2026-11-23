@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": [
+    "persisted ReAct tool trace",
+    "correct graph citation label",
+    "Markdown answer",
+    "trace survives page reload",
+    "mobile layout"
+  ],
+  "console_errors": []
+}

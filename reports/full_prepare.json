@@ -1,0 +1,14 @@
+{
+  "biographies": 326,
+  "embedding": "BgeEmbedding",
+  "dimension": 512,
+  "existing_vectors": 9804,
+  "verification_min_cosine": 1.000000033976271,
+  "chunks": 9921,
+  "unique_persons": 265,
+  "cached_chunk_hits": 9663,
+  "new_unique_texts": 258,
+  "cache_vectors": 10062,
+  "seconds": 37.73,
+  "status": "passed"
+}

@@ -1,0 +1,100 @@
+{
+  "checks": [
+    "full corpus, BGE, PostgreSQL and Celery configuration",
+    "real LLM streamed text, citations and usage",
+    "Redis retrieval cache hit and persisted session history",
+    "actual LangGraph intent routing and graph question",
+    "actual Celery ingestion, live index refresh, retrieval and removal"
+  ],
+  "initial_stats": {
+    "index": {
+      "chunks": 9921,
+      "persons": 335,
+      "relations": 355,
+      "embedder": "BgeEmbedding",
+      "vector_store": "PgVectorStore",
+      "graph_provider": "relational",
+      "revision": 5,
+      "signature": "e4612e9789d12af6c08dbc51d6b839cf18a695b777939f90892bbebc718fb9f8",
+      "reranker": "passthrough",
+      "build_ms": 6787.6,
+      "documents": 326
+    },
+    "llm_provider": "openai",
+    "llm_model": "deepseek-v4-pro",
+    "dataset": "full",
+    "usage": {
+      "calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens": 0,
+      "cached_tokens": 0,
+      "cost_yuan": 0.0
+    },
+    "config": {
+      "embedding": "bge",
+      "vector_store": "pgvector",
+      "rerank_enabled": false,
+      "kg_provider": "relational",
+      "prompt_version": "v2",
+      "queue": "celery",
+      "cache_enabled": true,
+      "database": "postgresql",
+      "graph_engine": "NetworkX + relational tables"
+    }
+  },
+  "stream": {
+    "events": 412,
+    "token_events": 410,
+    "first_token_seconds": 1.52,
+    "total_seconds": 4.73,
+    "engine": "sequential",
+    "usage": {
+      "calls": 1,
+      "prompt_tokens": 3647,
+      "completion_tokens": 410,
+      "reasoning_tokens": 0,
+      "cached_tokens": 3584,
+      "cost_yuan": 0.0
+    },
+    "citations": 8,
+    "answer": "根据现有资料，华罗庚在解析数论方面的贡献可归纳如下：\n\n**1. 完整三角和估计与 Waring 问题**\n- 在英国剑桥大学期间，华罗庚致力于解析数论，特别是圆法与三角和估计的研究，其关于完整三角和的估计、Waring 问题与 E. Prouhet 问题（或 Prouhet-Tary）等的重要研究，经过半个世纪考验，已成为众所周知的经典文献 [4]。\n- 他将 Waring 问题的重要结果基本上推广到更一般的方程情形，且限制变数为素数，自然包括“三素数定理”作为特例，成果总结在专著《堆垒素数论》中，该书已成为经典著作 [8]。\n\n**2. 堆垒素数论**\n- 华罗庚在堆垒素数论方面有经典著作，改进了完整三角和估计、Waring 问题等 [1]。\n- 其主要论著包括《堆垒素数论》（1957）和《数论导引》（1957）[7]。\n\n**3. 哥德巴赫猜想研究的推动**\n- 1953 年，华罗庚在中国科学院数学研究所领导数论讨论班，选定哥德巴赫猜想为讨论班主题。得益于该讨论班，王元于 1956 年证明（3,4），次年证明（2,3）；1963 年潘承洞证明（1,4）；最后陈景润证明（1,2），国际上称为“陈氏定理” [5]。\n\n**4. 数论方法在近似分析中的应用**\n- 华罗庚与王元合作，将数论方法应用于近似分析，相关成果体现在《数论在近似分析中的应用》（1978）一书中 [1][7]。\n\n综上，华罗庚在解析数论领域的贡献主要集中在完整三角和估计、Waring 问题的推广、堆垒素数论体系的建立，以及对哥德巴赫猜想研究的组织和推动上。"
+  },
+  "repeat_timings": {
+    "cache": 12.52,
+    "generate": 5219.59,
+    "total": 5236.76
+  },
+  "graph_agent": {
+    "engine": "langgraph",
+    "answer": "根据现有资料，无法确定苏步青的师承关系。图谱中虽有“苏步青 --师从(←) 卢庆骏、吴祖基、张素诚、张鸣镛、徐瑞云、方德植、曹锡华、朱福祖、杨忠道、林振声、白正国、秦元勋、程民德、胡和生、陈庆益”等三元组，但需注意：图谱关系方向为“师从(←)”，即箭头指向苏步青，表示这些人是苏步青的学生（苏步青培养了他们），而非苏步青的老师 [1][2][3](图谱)。参考资料中未提供苏步青本人导师或师承对象的明确记载。",
+    "notes": [
+      "rewrite: skipped(无历史)",
+      "route(rule=both, llm=graph)",
+      "cache: miss",
+      "retrieve: pool=29 kept=5 conf=high person=苏步青",
+      "graph: 23 条三元组",
+      "generate: ctx=4502字 conf=high",
+      "verify: 引用编号全部可溯源"
+    ],
+    "citations": 8,
+    "usage": {
+      "calls": 2,
+      "prompt_tokens": 3262,
+      "completion_tokens": 160,
+      "reasoning_tokens": 0,
+      "cached_tokens": 0,
+      "cost_yuan": 0.0
+    }
+  },
+  "ingestion_job": {
+    "id": 3,
+    "path": "uploads\\full_acceptance_3c52c4a5fa097e86ce3e77fd.txt",
+    "status": "done",
+    "chunks": 1,
+    "error": "",
+    "started_at": "2026-10-17T01:27:49.266452"
+  },
+  "validation_session_id": "sess-d37a887c60b14cc597ee0778a683cae1",
+  "status": "passed"
+}

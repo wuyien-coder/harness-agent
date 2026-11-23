@@ -1,0 +1,380 @@
+[
+ {
+  "name": "named/dense_only",
+  "config": {
+   "overrides": {
+    "use_bm25": false,
+    "use_graph": false
+   },
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "named"
+  },
+  "metrics": {
+   "n": 42,
+   "recall@1": 1.0,
+   "precision@1": 1.0,
+   "ndcg@1": 1.0,
+   "recall@3": 1.0,
+   "precision@3": 1.0,
+   "ndcg@3": 1.0,
+   "recall@5": 1.0,
+   "precision@5": 1.0,
+   "ndcg@5": 1.0,
+   "recall@10": 1.0,
+   "precision@10": 1.0,
+   "ndcg@10": 1.0,
+   "mrr": 1.0
+  },
+  "latency_ms": {
+   "p50": 0.22,
+   "p95": 0.28,
+   "mean": 0.4
+  },
+  "n": 42,
+  "notes": []
+ },
+ {
+  "name": "named/bm25_only",
+  "config": {
+   "overrides": {
+    "use_dense": false,
+    "use_graph": false
+   },
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "named"
+  },
+  "metrics": {
+   "n": 42,
+   "recall@1": 1.0,
+   "precision@1": 1.0,
+   "ndcg@1": 1.0,
+   "recall@3": 1.0,
+   "precision@3": 1.0,
+   "ndcg@3": 1.0,
+   "recall@5": 1.0,
+   "precision@5": 1.0,
+   "ndcg@5": 1.0,
+   "recall@10": 1.0,
+   "precision@10": 1.0,
+   "ndcg@10": 1.0,
+   "mrr": 1.0
+  },
+  "latency_ms": {
+   "p50": 0.57,
+   "p95": 0.86,
+   "mean": 0.57
+  },
+  "n": 42,
+  "notes": []
+ },
+ {
+  "name": "named/hybrid_rrf",
+  "config": {
+   "overrides": {
+    "use_graph": false
+   },
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "named"
+  },
+  "metrics": {
+   "n": 42,
+   "recall@1": 1.0,
+   "precision@1": 1.0,
+   "ndcg@1": 1.0,
+   "recall@3": 1.0,
+   "precision@3": 1.0,
+   "ndcg@3": 1.0,
+   "recall@5": 1.0,
+   "precision@5": 1.0,
+   "ndcg@5": 1.0,
+   "recall@10": 1.0,
+   "precision@10": 1.0,
+   "ndcg@10": 1.0,
+   "mrr": 1.0
+  },
+  "latency_ms": {
+   "p50": 0.79,
+   "p95": 1.11,
+   "mean": 0.79
+  },
+  "n": 42,
+  "notes": []
+ },
+ {
+  "name": "named/hybrid_weighted",
+  "config": {
+   "overrides": {
+    "use_graph": false,
+    "fusion": "weighted"
+   },
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "named"
+  },
+  "metrics": {
+   "n": 42,
+   "recall@1": 1.0,
+   "precision@1": 1.0,
+   "ndcg@1": 1.0,
+   "recall@3": 1.0,
+   "precision@3": 1.0,
+   "ndcg@3": 1.0,
+   "recall@5": 1.0,
+   "precision@5": 1.0,
+   "ndcg@5": 1.0,
+   "recall@10": 1.0,
+   "precision@10": 1.0,
+   "ndcg@10": 1.0,
+   "mrr": 1.0
+  },
+  "latency_ms": {
+   "p50": 0.75,
+   "p95": 0.95,
+   "mean": 0.73
+  },
+  "n": 42,
+  "notes": []
+ },
+ {
+  "name": "named/hybrid_rrf_graph",
+  "config": {
+   "overrides": {},
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "named"
+  },
+  "metrics": {
+   "n": 42,
+   "recall@1": 1.0,
+   "precision@1": 1.0,
+   "ndcg@1": 1.0,
+   "recall@3": 1.0,
+   "precision@3": 1.0,
+   "ndcg@3": 1.0,
+   "recall@5": 1.0,
+   "precision@5": 1.0,
+   "ndcg@5": 1.0,
+   "recall@10": 1.0,
+   "precision@10": 1.0,
+   "ndcg@10": 1.0,
+   "mrr": 1.0
+  },
+  "latency_ms": {
+   "p50": 0.81,
+   "p95": 1.33,
+   "mean": 0.87
+  },
+  "n": 42,
+  "notes": []
+ },
+ {
+  "name": "hard/q/dense_only_nofilter",
+  "config": {
+   "overrides": {
+    "use_bm25": false,
+    "use_graph": false,
+    "use_entity_filter": false
+   },
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "hard"
+  },
+  "metrics": {
+   "n": 28,
+   "recall@1": 0.9286,
+   "precision@1": 0.9286,
+   "ndcg@1": 0.9286,
+   "recall@3": 1.0,
+   "precision@3": 0.5119,
+   "ndcg@3": 0.9604,
+   "recall@5": 1.0,
+   "precision@5": 0.3714,
+   "ndcg@5": 0.9428,
+   "recall@10": 1.0,
+   "precision@10": 0.275,
+   "ndcg@10": 0.8741,
+   "mrr": 0.9583
+  },
+  "latency_ms": {
+   "p50": 0.21,
+   "p95": 0.3,
+   "mean": 0.22
+  },
+  "n": 28,
+  "notes": []
+ },
+ {
+  "name": "hard/q/bm25_only_nofilter",
+  "config": {
+   "overrides": {
+    "use_dense": false,
+    "use_graph": false,
+    "use_entity_filter": false
+   },
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "hard"
+  },
+  "metrics": {
+   "n": 28,
+   "recall@1": 1.0,
+   "precision@1": 1.0,
+   "ndcg@1": 1.0,
+   "recall@3": 1.0,
+   "precision@3": 0.5952,
+   "ndcg@3": 0.9943,
+   "recall@5": 1.0,
+   "precision@5": 0.4286,
+   "ndcg@5": 0.9823,
+   "recall@10": 1.0,
+   "precision@10": 0.2714,
+   "ndcg@10": 0.958,
+   "mrr": 1.0
+  },
+  "latency_ms": {
+   "p50": 0.98,
+   "p95": 2.08,
+   "mean": 1.11
+  },
+  "n": 28,
+  "notes": []
+ },
+ {
+  "name": "hard/q/hybrid_rrf_nofilter",
+  "config": {
+   "overrides": {
+    "use_graph": false,
+    "use_entity_filter": false
+   },
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "hard"
+  },
+  "metrics": {
+   "n": 28,
+   "recall@1": 0.9643,
+   "precision@1": 0.9643,
+   "ndcg@1": 0.9643,
+   "recall@3": 0.9643,
+   "precision@3": 0.5119,
+   "ndcg@3": 0.9557,
+   "recall@5": 1.0,
+   "precision@5": 0.4214,
+   "ndcg@5": 0.9401,
+   "recall@10": 1.0,
+   "precision@10": 0.2893,
+   "ndcg@10": 0.8976,
+   "mrr": 0.9714
+  },
+  "latency_ms": {
+   "p50": 1.23,
+   "p95": 1.89,
+   "mean": 1.32
+  },
+  "n": 28,
+  "notes": []
+ },
+ {
+  "name": "hard/q/hybrid_weighted_nofilter",
+  "config": {
+   "overrides": {
+    "use_graph": false,
+    "fusion": "weighted",
+    "use_entity_filter": false
+   },
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "hard"
+  },
+  "metrics": {
+   "n": 28,
+   "recall@1": 1.0,
+   "precision@1": 1.0,
+   "ndcg@1": 1.0,
+   "recall@3": 1.0,
+   "precision@3": 0.5357,
+   "ndcg@3": 0.9885,
+   "recall@5": 1.0,
+   "precision@5": 0.4286,
+   "ndcg@5": 0.9559,
+   "recall@10": 1.0,
+   "precision@10": 0.3036,
+   "ndcg@10": 0.9002,
+   "mrr": 1.0
+  },
+  "latency_ms": {
+   "p50": 1.2,
+   "p95": 1.83,
+   "mean": 1.25
+  },
+  "n": 28,
+  "notes": []
+ },
+ {
+  "name": "hard/q/hybrid_rrf_graph_nofilter",
+  "config": {
+   "overrides": {
+    "use_entity_filter": false
+   },
+   "top_k": 10,
+   "embedder": "HashEmbedding",
+   "reranker": "passthrough",
+   "dataset": "hard"
+  },
+  "metrics": {
+   "n": 28,
+   "recall@1": 0.9643,
+   "precision@1": 0.9643,
+   "ndcg@1": 0.9643,
+   "recall@3": 0.9643,
+   "precision@3": 0.5119,
+   "ndcg@3": 0.9557,
+   "recall@5": 1.0,
+   "precision@5": 0.4214,
+   "ndcg@5": 0.9401,
+   "recall@10": 1.0,
+   "precision@10": 0.2893,
+   "ndcg@10": 0.8976,
+   "mrr": 0.9714
+  },
+  "latency_ms": {
+   "p50": 1.16,
+   "p95": 1.65,
+   "mean": 1.22
+  },
+  "n": 28,
+  "notes": []
+ },
+ {
+  "name": "mcq/mcq:retrieval-grounded",
+  "config": {
+   "method": "retrieval-grounded",
+   "embedder": "HashEmbedding",
+   "llm": "stub"
+  },
+  "metrics": {
+   "accuracy": 0.5714,
+   "correct": 8
+  },
+  "latency_ms": {
+   "p50": 2.5,
+   "p95": 2.81
+  },
+  "n": 14,
+  "notes": [
+   "detail=8/14"
+  ]
+ }
+]
